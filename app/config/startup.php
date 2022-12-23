@@ -1,3 +1,3 @@
 <?php
 define("ROOT", dirname(dirname(__FILE__)));
-define("URL", 'https:\\mywebsite.com\\');
+define("URL", 'https://mywebsite.com//');
