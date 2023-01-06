@@ -48,13 +48,7 @@ class Bog
   
     public function loan_request($decoded)
     {
-      /*
-      //Receive the RAW post data.
-      $content = trim(file_get_contents("php://input"));
-  
-      //Attempt to decode the incoming RAW post data from JSON.
-      $decoded = json_decode($content, true);
-  */
+       
       $error = '';
       if (!isset($decoded['installment_month']))        $error .= 'installment_month,';
       if (!isset($decoded['shop_order_id']))            $error .= 'shop_order_id,';
