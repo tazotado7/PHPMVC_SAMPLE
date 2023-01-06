@@ -5,9 +5,9 @@ namespace libs\database;
 
 Class Database{
  
-	private $server = "mysql:host=127.0.0.1;dbname=iaiage_igora;charset=utf8";
-	private $username = "555";
-	private $password = "555";
+	private $server = "mysql:host=127.0.0.1;dbname=<database name>;charset=utf8";
+	private $username = "<database username>";
+	private $password = "<database password>";
 	private $options  = array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,);
 	protected $conn;
  	
