@@ -23,7 +23,7 @@ class Bog
       $httpheader = ["Content-Type: application/x-www-form-urlencoded", "Authorization: Basic " . $basic];
   
       $resoult = IPost::Post($link, $POSTFIELDS, $httpheader);
-
+      
         return $resoult['access_token']; 
     }
   
@@ -109,6 +109,24 @@ class Bog
       return IPost::Post($link, $POSTFIELDS, $httpheader);
    
       //return json_encode($resoult, JSON_UNESCAPED_SLASHES);
+    }
+
+    public function loan_check($orderid)
+    {
+      $tokeni = self::loan_token();
+      $link = "https://installment.bog.ge/v1/installment/checkout/".$orderid;
+      $httpheader = ["Content-Type: application/x-www-form-urlencoded", "Authorization: Basic " . $tokeni];
+      $resoult = IPost::Get($link, null, $httpheader);
+
+     
+      $dt = [
+        'sending'=>[
+          'link'=>$link,
+          'httpheader'=>$httpheader
+        ],
+        'received'=>$resoult
+      ];
+    return $dt;
     }
   
  
