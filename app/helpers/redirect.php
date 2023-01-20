@@ -4,7 +4,7 @@ namespace helpers\redirect;
 
 class redirect
    {
-
+    //ჩვენს საიტზე სად გვსურს გადავამისამართოთ, URL -> კონფიგ ფაილშუ უკვე ჩვენი საიტი გაწერილია.
         public static function  to($location)
         { 
             if (!headers_sent()) {
@@ -26,6 +26,7 @@ class redirect
             exit();
         }
 
+        // მომხმარებლის წინა გადმომისამართებული გვერძე დაბრუნება
         public static function  back()
         {
             header("Location: " . $_SERVER['HTTP_REFERER']);

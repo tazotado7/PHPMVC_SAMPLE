@@ -1,13 +1,24 @@
 <?php
-
 namespace libs\database;
-
+/*
+მონაცემთა ბაზასთან საკომუნიკაციო კლასი
+აწყობილია PDO კლასზე.
+გამოყენებულია sql injection თავის დაცვა
+დაგჭირდება ინსერტი სელექთი_ერთი ხაზი სელექთი_მრავალი ხაზი
+შემავალი პარამეტრები მარტივი დასაწერი იქნება
+$sql = "შენი სქლ სტრინგი"
+სქლ სტრინგში თუ რამე გინდა ჩაწერი წერ :ტესტ ორწერტილი და დასახელება
+იმავე დასახელებას იყენებ მასივში აუცილებლად
+$array= ['ტესტ'=>$my_test_daya_to_add_my_sql_string];
+და იძახებ დბ ფუნქციას
+$resoult = $DB->Select_singlle($sql,$array);
+*/
 
 Class Database{
  
-	private $server = "mysql:host=127.0.0.1;dbname=iaiage_igora;charset=utf8";
-	private $username = "555";
-	private $password = "555";
+	private $server = "mysql:host=127.0.0.1;dbname=<database name>;charset=utf8";
+	private $username = "<database username>";
+	private $password = "<database password>";
 	private $options  = array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,);
 	protected $conn;
  	
